@@ -1,0 +1,45 @@
+class Vehicle {
+    protected String brand;
+    protected int speed;
+      public Vehicle(String brand, int speed) {
+        this.brand = brand;
+        this.speed = speed;
+    }
+      public void printSpeed() {
+        System.out.println("Speed: " + speed + " km/h");
+    }
+}
+class Car extends Vehicle {
+    private String model;
+      public Car(String brand, int speed, String model) {
+        super(brand, speed);
+        this.model = model;
+    }
+        public void printCarDetails() {
+        System.out.println("Car Brand: " + brand);
+        System.out.println("Car Model: " + model);
+        printSpeed();
+    }
+}
+class Bike extends Vehicle {
+    private boolean isSportBike;
+        public Bike(String brand, int speed, boolean isSportBike) {
+        super(brand, speed);
+        this.isSportBike = isSportBike;
+    }
+        public void printBikeDetails() {
+        System.out.println("Bike Brand: " + brand);
+        System.out.println("Is Sport Bike: " + (isSportBike ? "Yes" : "No"));
+        printSpeed();
+    }
+}
+public class VehicleTest {
+    public static void main(String[] args) {
+                Car car = new Car("Toyota", 180, "Camry");
+        car.printCarDetails();
+        
+        System.out.println();
+                Bike bike = new Bike("Yamaha", 220, true);
+        bike.printBikeDetails();
+    }
+}
