@@ -1,0 +1,49 @@
+class Person {
+    String name;
+    int age;
+    String phoneNumber;
+     String address;
+       public Person(String name, int age, String phoneNumber, String address) {
+        this.name = name;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+       public void printDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Phone: " + phoneNumber);
+        System.out.println("Address: " + address);
+    }
+}
+class Student extends Person {
+    private String course;
+       public Student(String name, int age, String phoneNumber, String address, String course) {
+        super(name, age, phoneNumber, address);
+        this.course = course;
+    }
+       public void printCourse() {
+        System.out.println("Course: " + course);
+    }
+}
+class Teacher extends Person {
+    private String subject;
+       public Teacher(String name, int age, String phoneNumber, String address, String subject) {
+        super(name, age, phoneNumber, address);
+        this.subject = subject;
+    }
+        public void printSubject() {
+        System.out.println("Subject: " + subject);
+    }
+}
+public class InheritanceDemo {
+    public static void main(String[] args) {
+                Student student = new Student("prasad", 20, "123-456-7890", "123 Main St", "Computer Science");
+        student.printDetails();
+        student.printCourse();
+                System.out.println();
+             Teacher teacher = new Teacher("Mr. Smith", 45, "987-654-3210", "456 Oak Ave", "Mathematics");
+        teacher.printDetails();
+        teacher.printSubject();
+    }
+}
