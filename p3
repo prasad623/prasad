@@ -1,0 +1,29 @@
+abstract class Telephone {
+        abstract void call();
+    abstract void lift();
+    abstract void disconnect();
+}
+class SmartTelephone extends Telephone {
+        void call() {
+        System.out.println("Dialing a number and making a call...");
+    }
+    void lift() {
+        System.out.println("Lifting the receiver...");
+    }
+    void disconnect() {
+        System.out.println("Ending the call and disconnecting...");
+    }
+    void browseInternet() {
+        System.out.println("Browsing the internet on the smart telephone...");
+    }
+}
+public class TelephoneDemo {
+    public static void main(String[] args) {
+                Telephone phone = new SmartTelephone();
+        phone.call();
+        phone.lift();
+        phone.disconnect();
+              SmartTelephone smartPhone = new SmartTelephone();
+        smartPhone.browseInternet();
+    }
+}
