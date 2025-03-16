@@ -1,0 +1,32 @@
+class Order {
+       private String customerName;
+    private String cakeType;
+    private int quantity;
+    private double pricePerCake;
+    public Order(String customerName, String cakeType, int quantity) {
+        this.customerName = customerName;
+        this.cakeType = cakeType;
+        this.quantity = quantity;
+            if (cakeType.equalsIgnoreCase("Chocolate")) {
+            this.pricePerCake = 350;
+        } else if (cakeType.equalsIgnoreCase("Vanilla")) {
+            this.pricePerCake = 300;
+        } else {
+            this.pricePerCake = 250; 
+        }
+    }
+    public double calculateTotalPrice() {
+        return quantity * pricePerCake;
+    }
+    public void displayOrderDetails() {
+        System.out.println("Customer Name: " + customerName);
+        System.out.println("Cake Type: " + cakeType);
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Price per Cake: ₹" + pricePerCake);
+        System.out.println("Total Price: ₹" + calculateTotalPrice());
+    }
+    public static void main(String[] args) {
+              Order order1 = new Order("Kavya", "Chocolate", 2);
+        order1.displayOrderDetails();
+    }
+}
